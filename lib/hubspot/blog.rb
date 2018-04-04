@@ -73,6 +73,7 @@ module Hubspot
 
     def initialize(response_hash)
       @properties = response_hash #no need to parse anything, we have properties
+      @properties['topic_names'] = topics.collect { |t| t['name'] }
     end
 
     def [](property)
